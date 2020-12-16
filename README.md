@@ -1,0 +1,5 @@
+项目基于spring boot的，主要功能是拦截器和swagger的使用
+还有是html中的vue和axios的cdn方式的使用
+html中的缓冲的简单使用
+jdk8+mysql8
+记录一下，日后方便搬砖
