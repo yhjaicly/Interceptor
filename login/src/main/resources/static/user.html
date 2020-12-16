@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.js"></script>
+</head>
+<body>
+<div id="app">
+    <p v-text="user.id"></p>
+    <p v-text="user.username"></p>
+    <p v-text="user.password"></p>
+    <p v-text="user.qx"></p>
+
+</div>
+
+
+</body>
+<script>
+    const  app = new Vue({
+        el: '#app',
+        data: {
+            user:{},
+            username: '',
+            password: ''
+        },
+        methods:{
+            login(){
+                var that = this
+                axios.get("http://127.0.0.1:8080/admin/show").then((res)=>{
+                    that.user = res.data.user
+                    console.log(res.data);
+                })
+            }
+        },
+        created(){
+            this.login();
+        }
+    })
+</script>
+</html>
